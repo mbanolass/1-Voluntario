@@ -1,0 +1,16 @@
+def nif():
+    comp=False
+    letras='TRWAGMYFPDXBNJZSQVHLCKE'
+    dni=int(input("Dime el numero de tu dni "))
+    resto=dni%23
+    while (comp==False):
+        letra=input("Dime la letra de tu dni ")
+        if(letra==letras[resto+1]):
+            comp==True
+            print("Correcto")
+            break
+        else:
+            comp==False
+            print("Incorrecto")
+            
+nif()
