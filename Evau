@@ -1,0 +1,43 @@
+# Calculo de al nota de acceso Evau
+def introduccion():
+    print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+    print("  Enumera tus opciones principales de carrera en orden")
+    carrera1=((input("  1ª - ")))
+    carrera1=((input("  2ª - ")))
+    carrera1=((input("  3ª - ")))
+    print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+    print("  Introduce las notas de las siguientes materias obligatorias en la Evau sin decimales")
+    ingles=(int(input("    Ingles - ")))
+    lengua=(int(input("    Lengua - ")))
+    historia=(int(input("    Historia - ")))
+    matematicas=(int(input("    Matematicas - ")))
+    notaobligatoria=((ingles+lengua+historia+matematicas)/4)
+    continuar=True
+    if(notaobligatoria<4):
+            print("Tu nota no es suficiente para mediar")
+            continuar=False
+    else:
+        print("Tu nota es suficiente para mediar")
+        print(    notaobligatoria)
+    print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+    NMB=(int(input("    Introduce tu nota media de Bachillerato (sin decimales): ")))
+    notaacceso=(notaobligatoria*0.4+NMB*0.6)
+    print("Tu nota de acceso es de: "+str(notaacceso))
+    if(notaacceso<5):
+        print("  No estas aprobado")
+        continuar=False
+    else: 
+        print("  Estas aprobado")
+    print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+    print("  Introduce las notas de las pruebas voluntarias de la Evau en las que mejor nota hayas sacado")
+    vol1=(int(input("  Optativa 1: ")))
+    a=int(input("Cuanto te pondera esta asignatura (1 o 2): "))
+    vol2=(int(input("  Optativa 2: ")))
+    b=int(input("Cuanto te pondera esta asignatura (1 o 2): "))
+    notaadmision=notaacceso+a/10*vol1+b/10*vol2
+    print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+    print("  Tu nota de admision final es de: "+str(notaadmision))
+        
+    
+        
+introduccion()
