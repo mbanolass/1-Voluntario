@@ -1,0 +1,38 @@
+# Introduces una contraseña y te dice el numero de letras y numeros
+# Dice si es valida o no segun el numero de caracteres que tenga (mas 8)
+def numeros(caracter):
+    respuesta=False
+    if (caracter=='1' or caracter=='2' or caracter=='3' or caracter=='4' or caracter=='5'or caracter=='6' or caracter=='7' or caracter=='8' or caracter=='9'):
+        respuesta=True
+    return(respuesta)
+
+def deletreo():
+    print("***********************************************************")
+    print("                       *Condiciones*                   ")
+    print("             - Tener al menos 8 caracteres             ")
+    print("             - Contener letras y numeros               ")
+    print("             - Contener al menos un caracter especial  ")
+    print("***********************************************************")
+    contraseña=input("- Dime una contraseña: ")
+    cuentanumeros=0
+    cuentaletras=0
+    for cont in range(0,len(contraseña)):
+        print(contraseña[cont]+ " ")
+        if(numeros(contraseña[cont])==True):
+            cuentanumeros=cuentanumeros+1
+        else:
+            if(contraseña):
+                cuentaletras=cuentaletras+1
+    print("Tiene "+ str(cuentanumeros)+ " numeros")
+    print("Tiene "+ str(cuentaletras)+ " letras ")
+    
+    if(cuentanumeros>0 and cuentaletras>0 and cuentaletras+cuentanumeros>=8):
+        especiales=contraseña.isalnum()
+        if(especiales==False):
+            print("La contraseña es valida")
+        else:
+            print("La contraseña no es valida")
+    else:
+        print("La contraseña no es valida")
+    
+deletreo()
